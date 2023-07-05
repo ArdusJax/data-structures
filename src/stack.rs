@@ -95,8 +95,9 @@ mod tests {
         st.push(13);
         st.push(3);
         st.push(330);
+
         let res = st.peek();
-        dbg!(res);
+        assert_eq!(res, Some(330));
     }
     #[test]
     fn push_simple_stack() {
@@ -105,7 +106,10 @@ mod tests {
         st.push(13);
         st.push(3);
         st.push(330);
-        dbg!(st);
+        st.push(42);
+
+        let res = st.peek();
+        assert_eq!(res, Some(42));
     }
     #[test]
     fn pop_simple_stack() {
@@ -114,7 +118,7 @@ mod tests {
         st.push(13);
         st.push(3);
         st.push(330);
-        //pop a value off of the stack
+
         let res = st.pop();
         assert_eq!(res, Some(330));
     }
