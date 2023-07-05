@@ -79,8 +79,6 @@ impl<T: Copy> Queue<T> {
 #[cfg(test)]
 mod tests {
 
-    use std::borrow::Borrow;
-
     use super::*;
 
     #[test]

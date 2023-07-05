@@ -3,6 +3,7 @@ use std::rc::Rc;
 
 type Link = Option<Rc<RefCell<Node>>>;
 
+#[derive(Debug)]
 pub struct Node {
     pub data: i32,
     pub prev: Link,
@@ -26,5 +27,6 @@ mod test {
     #[test]
     fn initialize_linked_list() {
         let new_linked_list = Node::new(0);
+        dbg!(new_linked_list);
     }
 }
