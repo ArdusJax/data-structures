@@ -122,4 +122,12 @@ mod tests {
         let res = st.pop();
         assert_eq!(res, Some(330));
     }
+
+    #[test]
+    fn pop_empty_stack() {
+        let mut st: Stack<i32> = Stack::new();
+
+        let res = st.pop();
+        assert_eq!(res, None);
+    }
 }
