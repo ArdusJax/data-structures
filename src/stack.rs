@@ -50,7 +50,7 @@ impl<T: Copy> Stack<T> {
             Some(head) => {
                 let h = Rc::try_unwrap(head)
                     .ok()
-                    .expect("unable to destack")
+                    .expect("unable to pop item from the stack")
                     .into_inner();
                 self.head = h.next;
                 self.length -= 1;
@@ -64,7 +64,7 @@ impl<T: Copy> Stack<T> {
             Some(
                 Rc::try_unwrap(v)
                     .ok()
-                    .expect("something went wrong")
+                    .expect("unable to peek from the stack")
                     .into_inner()
                     .value,
             )
