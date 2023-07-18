@@ -1,12 +1,12 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-type Link<T> = Option<Rc<RefCell<QNode<T>>>>;
+pub type QLink<T> = Option<Rc<RefCell<QNode<T>>>>;
 
 #[derive(Debug)]
 pub struct QNode<T> {
     value: T,
-    next: Link<T>,
+    next: QLink<T>,
 }
 
 impl<T> QNode<T> {
@@ -21,8 +21,8 @@ impl<T> QNode<T> {
 #[derive(Debug)]
 pub struct Queue<T> {
     pub length: i32,
-    head: Link<T>,
-    tail: Link<T>,
+    head: QLink<T>,
+    tail: QLink<T>,
 }
 
 impl<T: Copy> Queue<T> {
