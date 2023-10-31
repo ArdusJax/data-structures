@@ -1,5 +1,4 @@
-// Package queue - queue is a package that contains the Queue datastructure and associated functions and methods
-package queue
+package structures
 
 // Node - Node is a data type that is contained by the Queue
 type Node struct {
